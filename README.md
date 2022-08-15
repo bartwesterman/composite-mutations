@@ -1,4 +1,5 @@
-# composite-mutations (R script written by Asli Küçükosmanoglu)
+# composite-mutations (R script)
+##written by Asli Küçükosmanoglu)
 
 Oncogenic composite mutations can be predicted by co-mutations and their chromosomal location
 
