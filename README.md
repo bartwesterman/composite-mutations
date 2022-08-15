@@ -22,3 +22,6 @@ FPR=FP/(TN+FP)
  
 Randomized data To evaluate our prediction model, we randomly shuffled the features of each dataset from 10 to 100% in 10 steps. From the shuffled data we also build a separate random forest model and got the final prediction for each dataset that has been received after the ensemble learning. For each shuffled data, the performance was calculated and plotted.
 
+This site was built using [GitHub Pages](https://pages.github.com/).
+https://github.com/bartwesterman/composite-mutations/blob/main/randomized_RF.R
+
