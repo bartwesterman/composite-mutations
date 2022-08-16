@@ -27,8 +27,11 @@ precision=TP/(TP+FP)
 TPR,recall,sensitivity= TP/(TP+FN)
 
 FPR=FP/(TN+FP)
+
+The random forest prediction model can be found here:[RF_model_geneatlas](https://github.com/bartwesterman/composite-mutations/blob/main/RF_model_geneatlas.R)
  
-Randomized data To evaluate our prediction model, we randomly shuffled the features of each dataset from 10 to 100% in 10 steps. From the shuffled data we also build a separate random forest model and got the final prediction for each dataset that has been received after the ensemble learning. For each shuffled data, the performance was calculated and plotted.
+## Randomized data 
+To evaluate our prediction model, we randomly shuffled the features of each dataset from 10 to 100% in 10 steps. From the shuffled data we also build a separate random forest model and got the final prediction for each dataset that has been received after the ensemble learning. For each shuffled data, the performance was calculated and plotted.
 
 Randomised model can be found here: [randomized_RF.R](https://github.com/bartwesterman/composite-mutations/blob/main/randomized_RF.R)
 
