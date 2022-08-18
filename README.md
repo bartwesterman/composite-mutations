@@ -41,6 +41,8 @@ Processed Input data for the Random Forest model can be found on the Synapse por
 
 The R script to create the input can be found here: [input_RF_model_geneatlas](https://github.com/bartwesterman/composite-mutations/blob/main/input_RF_model_geneatlas.R)
 
+The R script for the random forest prediction model can be found here:[RF_model_geneatlas](https://github.com/bartwesterman/composite-mutations/blob/main/RF_model_geneatlas.R)
+
 Random Forest The random forest machine learning algorithm was chosen as it is robust and capable of processing high-dimensional datasets. Furthermore, it applies to binary data as well as data containing continuous values. This machine-learning algorithm builds many decision trees, using bagging and feature randomness to create each tree. By combining all these decision trees (an uncorrelated forest of trees) the most accurate prediction is expected in comparison to a single tree. The library randomForestSRC(H. Ishwaran and U.B. Kogalur and E.H. Blackstone and M.S. Lauer 2008) in R is used to build the random forest model with 100 trees. The training set (2/3) and test set(1/3) are created by dividing the data using createDataPartition from the library caret (Max Kuhn 2009). All the default parameters are used for building the model.
 
 Ensemble learning We build separate models for the data for the complementary relationship and the chromosomal disruption. The method of ensemble learning allows us to combine different models to find a more powerful prediction result. We computed a weighted-average prediction ensemble model. The probability score given by the separate random forest models were extracted. As there was a stronger complementary relationship, we multiplied the probability score of this model by 0.75, whereas the chromosomal disruption model was multiplied by 0.25. The highest average score defined the final predictive label.
@@ -56,8 +58,7 @@ TPR,recall,sensitivity= TP/(TP+FN)
 
 FPR=FP/(TN+FP)
 
-The R script for the random forest prediction model can be found here:[RF_model_geneatlas](https://github.com/bartwesterman/composite-mutations/blob/main/RF_model_geneatlas.R)
- 
+
 ## Randomized data 
 To evaluate our prediction model, we randomly shuffled the features of each dataset from 10 to 100% in 10 steps. From the shuffled data we also build a separate random forest model and got the final prediction for each dataset that has been received after the ensemble learning. For each shuffled data, the performance was calculated and plotted.
 
