@@ -29,12 +29,13 @@ The TCGA source data is available via [cbioportal](https://www.cbioportal.org), 
 |	Pancreatic Adenocarcinoma	|	Pancreatic Adenocarcinoma (TCGA, Provisional)	|	186	|	NA	|	paad_tcga	|
 ![image](https://user-images.githubusercontent.com/47714729/185412059-2c09c12b-537c-4137-856f-78e4ed2d6d09.png)
 
-
-Input data for the Random Forst model can be found through the Synapse portal: [input data](https://www.synapse.org/#!Synapse:syn34623212)
 Samples with composit mutations: [Composite samples](https://github.com/bartwesterman/composite-mutations/tree/Source-data)
 
+
 ### Prediction model
-Input data We selected the top four interesting genes with composite mutation based on high frequency and relevance towards targeted therapy (BRAF, EGFR, KRAS, PIK3CA). We divided the data into tumor types that have composite mutations in either BRAF, EGFR, KRAS, or PIK3CA.  For all these separated groups we defined all the cases that contain composite mutations or without any composite mutations. Per group of genes with a composite mutation, only the significant co-mutations are taken along as features. These features contain either the information about mutation or copy number variation (binary input) or the distance from co-mutation to the gene with composite mutation (continuous value). All the relative distances of the input belonging to the chromosomal distance model are normalized towards the total distance of the genome (3,000,000,000). See Supplementary Table 2 for all the input data.
+Input data We selected the top four interesting genes with composite mutation based on high frequency and relevance towards targeted therapy (BRAF, EGFR, KRAS, PIK3CA). We divided the data into tumor types that have composite mutations in either BRAF, EGFR, KRAS, or PIK3CA. For all these separated groups we defined all the cases that contain composite mutations or without any composite mutations. Per group of genes with a composite mutation, only the significant co-mutations are taken along as features. These features contain either the information about mutation or copy number variation (binary input) or the distance from co-mutation to the gene with composite mutation (continuous value). All the relative distances of the input belonging to the chromosomal distance model are normalized towards the total distance of the genome (3,000,000,000). See Supplementary Table 2 for all the input data.
+
+Processed Input data for the Random Forest model can be found on the Synapse portal: [input data](https://www.synapse.org/#!Synapse:syn34623212)
 
 The R script to create the input can be found here: [input_RF_model_geneatlas](https://github.com/bartwesterman/composite-mutations/blob/main/input_RF_model_geneatlas.R)
 
