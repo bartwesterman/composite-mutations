@@ -31,7 +31,7 @@ The TCGA source data is available via [cbioportal](https://www.cbioportal.org), 
 |	Pancreatic Adenocarcinoma	|	Pancreatic Adenocarcinoma (TCGA, Provisional)	|	186	|	NA	|	paad_tcga	|
 ![image](https://user-images.githubusercontent.com/47714729/185412059-2c09c12b-537c-4137-856f-78e4ed2d6d09.png)
 
-Samples with composit mutations: [Composite samples](https://github.com/bartwesterman/composite-mutations/tree/Source-data)
+Samples with composit mutations: [Composite samples](https://github.com/bartwesterman/composite-mutations/blob/Source-data/annot_samples)
 
 
 ### Prediction model
