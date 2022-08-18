@@ -9,6 +9,26 @@ Genetic heterogeneity in tumors can show a remarkable selectivity when two or mo
 
 ### Source data
 The TCGA source data is available via [cbioportal](https://www.cbioportal.org), all source data is retrieved via the cgdsr package. 
+|	Tumor.type	|	Dataset	|	Sample.size	|	PMID:	|	Datast_code	|
+|	---	|	---	|	---	|	---	|	---	|
+|	Breast	|	Breast Invasive Carcinoma (TCGA, Firehorse Legacy)	|	1108	|	30205045	|		|
+|	Non-Small Cell Lung Cancer	|	Pan-Lung Cancer (TCGA, Nat Genet 2016)	|	1144	|	27158780	|	nsclc_tcga_broad_2016	|
+|	Prostate Adenocarcinoma	|	Prostate Adenocarcinoma (MSKCC/DFCI, Nature Genetics 2018)	|	1013	|	29610475	|	prad_tcga	|
+|	Colorectal Adenocarcinoma	|	Colorectal Adenocarcinoma (TCGA, Provisional)	|	640	|	NA	|	coadread_tcga	|
+|	Serous ovarian cancer	|	Ovarian Serous Cystadenocarcinoma (TCGA, Provisional)	|	606	|	NA	|	ov_tcga	|
+|	Glioblastoma	|	Glioblastoma Multiforme (TCGA, Provisional)	|	604	|	NA	|	gbm_tcga	|
+|	Esophageal Carcinoma	|	Esophageal Carcinoma (TCGA, Nature 2017)	|	559	|	28052061	|	stes_tcga_pub	|
+|	Endometrial Carcinoma	|	Uterine Corpus Endometrial Carcinoma (TCGA, Provisional)	|	548	|	NA	|	ucec_tcga	|
+|	Renal Clear Cell Carcinoma	|	Kidney Renal Clear Cell Carcinoma (TCGA, Provisional)	|	538	|	NA	|	kirc_tcga	|
+|	Head and Neck Squamous Cell Carcinoma	|	Head and Neck Squamous Cell Carcinoma (TCGA, Provisional)	|	530	|	NA	|	hnsc_tcga	|
+|	Papillary Thyroid Cancer	|	Thyroid Carcinoma (TCGA, Provisional)	|	516	|	NA	|	thca_tcga	|
+|	Cutaneous Melanoma	|	Skin Cutaneous Melanoma (TCGA, Provisional)	|	479	|	NA	|	skcm_tcga	|
+|	Hepatocellular Carcinoma	|	Liver Hepatocellular Carcinoma (TCGA, Provisional)	|	442	|	NA	|	lihc_tcga	|
+|	Bladder Urothelial Carcinoma	|	Bladder Urothelial Carcinoma (TCGA, Provisional)	|	413	|	NA	|	blca_tcga	|
+|	Cervical Squamous Cell Carcinoma	|	Cervical Squamous Cell Carcinoma and Endocervical Adenocarcinoma (TCGA, Provisional)	|	310	|	NA	|	cesc_tcga	|
+|	Pancreatic Adenocarcinoma	|	Pancreatic Adenocarcinoma (TCGA, Provisional)	|	186	|	NA	|	paad_tcga	|
+![image](https://user-images.githubusercontent.com/47714729/185412059-2c09c12b-537c-4137-856f-78e4ed2d6d09.png)
+
 
 Input data for the Random Forst model can be found through the Synapse portal: [input data](https://www.synapse.org/#!Synapse:syn34623212)
 Samples with composit mutations: [Composite samples](https://github.com/bartwesterman/composite-mutations/tree/Source-data)
