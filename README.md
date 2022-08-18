@@ -7,6 +7,11 @@
 ### Abstract
 Genetic heterogeneity in tumors can show a remarkable selectivity when two or more independent genetic events occur in the same gene.  This phenomenon, called composite mutation, points towards to a selective pressure that could cause therapy resistance to mutation-specific drugs. Since composite mutations have been described to occur in sub-clonal populations, they are not always captured through biopsy sampling. Here we provide a proof of concept to predict composite mutations to anticipate which patients might be at risk for sub-clonally driven therapy-resistance. We found that composite mutations occur in 5% of the patients, mostly affecting the PIK3CA, EGFR, BRAF and KRAS genes, which are common drug targets. Furthermore, we found that there is a strong relationship between the frequencies of composite mutations with commonly co-occurring mutations in a non-composite context (p-value 1.7E-10 or lower). We also found that co-mutations frequently occur on the same chromosome (p-values 4.0E-8) and cause a dependency on them (p-value 3.9E-5). The prediction model shows that prediction of compositive mutations is feasible (AUC 0.62, 0.81, 0.82 and 0.91 for EGFR/PIK3CA/KRAS and BRAF), which implicates that our model could help to assess the risk whether patients will develop therapy-resistance against targeted therapies.
 
+### Source data
+The TCGA source data is available via [cbioportal](https://www.cbioportal.org), all source data is retrieved via the cgdsr package. 
+
+Input data for the Random Forst model can be found through the Synapse portal: [input data](https://www.synapse.org/#!Synapse:syn34623212)
+Samples with composit mutations: [Composite samples](https://github.com/bartwesterman/composite-mutations/tree/Source-data)
 
 ### Prediction model
 Input data We selected the top four interesting genes with composite mutation based on high frequency and relevance towards targeted therapy (BRAF, EGFR, KRAS, PIK3CA). We divided the data into tumor types that have composite mutations in either BRAF, EGFR, KRAS, or PIK3CA.  For all these separated groups we defined all the cases that contain composite mutations or without any composite mutations. Per group of genes with a composite mutation, only the significant co-mutations are taken along as features. These features contain either the information about mutation or copy number variation (binary input) or the distance from co-mutation to the gene with composite mutation (continuous value). All the relative distances of the input belonging to the chromosomal distance model are normalized towards the total distance of the genome (3,000,000,000). See Supplementary Table 2 for all the input data.
@@ -14,8 +19,6 @@ Input data We selected the top four interesting genes with composite mutation ba
 The R script to create the input can be found here: [input_RF_model_geneatlas](https://github.com/bartwesterman/composite-mutations/blob/main/input_RF_model_geneatlas.R)
 
 Random Forest The random forest machine learning algorithm was chosen as it is robust and capable of processing high-dimensional datasets. Furthermore, it applies to binary data as well as data containing continuous values. This machine-learning algorithm builds many decision trees, using bagging and feature randomness to create each tree. By combining all these decision trees (an uncorrelated forest of trees) the most accurate prediction is expected in comparison to a single tree. The library randomForestSRC(H. Ishwaran and U.B. Kogalur and E.H. Blackstone and M.S. Lauer 2008) in R is used to build the random forest model with 100 trees. The training set (2/3) and test set(1/3) are created by dividing the data using createDataPartition from the library caret (Max Kuhn 2009). All the default parameters are used for building the model.
-
-Samples with composit mutations can be found here: [Composite samples](https://github.com/bartwesterman/composite-mutations/tree/Source-data)
 
 Processed data can be found here: [cleaned data TCGA](https://github.com/bartwesterman/composite-mutations/blob/main/cleanedTCGAmutCNVdata.txt)
 
